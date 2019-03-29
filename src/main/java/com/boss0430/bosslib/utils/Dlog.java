@@ -13,9 +13,7 @@ import android.util.Log;
  */
 public class Dlog {
 
-    // Test for Library project synchronization
-    // Wow It Works!!
-    // Test For 2nd Commit to GitHub
+    // This text is written just for test
 
     private static boolean showLog = false;
 
