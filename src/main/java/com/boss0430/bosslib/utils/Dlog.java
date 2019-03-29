@@ -5,7 +5,8 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 
 /**
- * Class that Display logs.
+ * Class that Display logs.<br>
+ * Several variables set to public static. see'out' method to check reason.
  * @since 2019 Mar 27
  * @author boss0430
  * source comes from "Dbg.java" file in several projects.
@@ -14,19 +15,38 @@ public class Dlog {
 
     // Test for Library project synchronization
     // Wow It Works!!
+    // Test For 2nd Commit to GitHub
 
     private static boolean showLog = false;
 
+    @SuppressWarnings("WeakerAccess")
     public static final int v = Log.VERBOSE;
+
+    @SuppressWarnings("WeakerAccess")
     public static final int d = Log.DEBUG;
+
+    @SuppressWarnings("WeakerAccess")
     public static final int i = Log.INFO;
+
+    @SuppressWarnings("WeakerAccess")
     public static final int w = Log.WARN;
+
+    @SuppressWarnings("WeakerAccess")
     public static final int e = Log.ERROR;
 
+    @SuppressWarnings("WeakerAccess")
     public static final String verbose = "v";
+
+    @SuppressWarnings("WeakerAccess")
     public static final String debug = "d";
+
+    @SuppressWarnings("WeakerAccess")
     public static final String info = "i";
+
+    @SuppressWarnings("WeakerAccess")
     public static final String warn = "w";
+
+    @SuppressWarnings("WeakerAccess")
     public static final String error = "e";
 
     public Dlog() {
@@ -48,7 +68,7 @@ public class Dlog {
             return;
         }
 
-        String tag = null;
+        String tag;
 
         if (_classOrTag instanceof Context || _classOrTag instanceof Fragment) {
             tag = _classOrTag.getClass().getSimpleName();
@@ -76,8 +96,8 @@ public class Dlog {
             return;
         }
 
-        String tag = null;
-        String logType = null;
+        String tag;
+        String logType;
 
         if (_classOrTag instanceof Context || _classOrTag instanceof Fragment) {
             tag = _classOrTag.getClass().getSimpleName();
@@ -103,8 +123,6 @@ public class Dlog {
             Log.w(tag, _msg);
         } else if (error.equalsIgnoreCase(logType)) {
             Log.e(tag, _msg);
-        } else {
-            return;
         }
     } // ENDOF out FUNCTION.
 
@@ -124,8 +142,8 @@ public class Dlog {
             return;
         }
 
-        String tag = null;
-        String logType = null;
+        String tag;
+        String logType;
 
         if (_classOrTag instanceof Context || _classOrTag instanceof Fragment) {
             tag = _classOrTag.getClass().getSimpleName();
@@ -173,11 +191,7 @@ public class Dlog {
             } else if (error.equalsIgnoreCase(logType)) {
                 Log.e(tag, _msg);
                 Log.e(tag + " position", "at " + fullClassName + "." + methodName + "(" + className + ".java:" + lineNumber + ")");
-            } else {
-                return;
             }
-        } else {
-            return;
         }
     }
 
